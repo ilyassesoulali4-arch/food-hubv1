@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — FoodHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+
+<!-- Simple nav for auth page -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path fill="white" d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.5-6.72-5-8.03-5-1.28 0-8 .5-8 5h16.03zM1.02 17h15v2h-15z"/></svg>
+      </div>
+      <span class="nav-logo-text">Food<span>Hub</span></span>
+    </a>
+    <a href="index.html" class="btn btn-outline btn-sm" style="margin-left:auto">← Back to Home</a>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <!-- LEFT PANEL -->
+  <div class="auth-left">
+    <div class="auth-left-bg"></div>
+    <div class="auth-left-content">
+      <a href="index.html" class="nav-logo" style="justify-content:center;margin-bottom:2.5rem;text-decoration:none">
+        <div class="nav-logo-icon" style="width:52px;height:52px">
+          <svg viewBox="0 0 24 24" style="width:26px;height:26px"><path fill="white" d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.5-6.72-5-8.03-5-1.28 0-8 .5-8 5h16.03zM1.02 17h15v2h-15z"/></svg>
+        </div>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:white">Food<span style="color:var(--brand-light)">Hub</span></span>
+      </a>
+      <h2>Hungry? We've Got You.</h2>
+      <p style="margin-top:1rem;margin-bottom:3rem">Sign in to track orders, save favorites, and enjoy exclusive member discounts on every delivery.</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:left">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;min-width:44px;border-radius:13px;background:rgba(212,66,15,0.25);display:flex;align-items:center;justify-content:center">
+            <svg width="18" height="18" fill="none" stroke="var(--brand-light)" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div>
+            <div style="color:white;font-weight:700;font-size:0.9rem">Lightning Fast Delivery</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:2px">Average 28 minutes to your door</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;min-width:44px;border-radius:13px;background:rgba(201,152,42,0.2);display:flex;align-items:center;justify-content:center">
+            <svg width="18" height="18" fill="var(--gold-light)" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+          </div>
+          <div>
+            <div style="color:white;font-weight:700;font-size:0.9rem">Exclusive Member Deals</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:2px">Up to 30% off with Premium plan</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;min-width:44px;border-radius:13px;background:rgba(30,138,74,0.2);display:flex;align-items:center;justify-content:center">
+            <svg width="18" height="18" fill="none" stroke="#6fcf97" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div style="color:white;font-weight:700;font-size:0.9rem">Real-Time Order Tracking</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:2px">Know exactly where your food is</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div style="margin-top:3rem;padding:1.5rem;background:rgba(255,255,255,0.06);border-radius:18px;border:1px solid rgba(255,255,255,0.09);text-align:left">
+        <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:1rem">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face&q=80" style="width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1)" alt="Omar">
+          <div>
+            <div style="color:white;font-weight:700;font-size:0.88rem">Omar Al-Rashid</div>
+            <div style="color:rgba(255,255,255,0.4);font-size:0.75rem">Regular Customer</div>
+          </div>
+          <div style="margin-left:auto;display:flex;gap:2px">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gold-light)"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gold-light)"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gold-light)"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gold-light)"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gold-light)"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.84rem;line-height:1.7;font-style:italic">"FoodHub changed how I eat. Fast, fresh, and the member discounts are incredible. Never ordering any other way!"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="auth-right">
+    <div class="auth-box">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
+        <button class="auth-tab" onclick="switchTab('register')">Create Account</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div class="auth-panel active" id="loginPanel">
+        <h1 style="font-size:2rem;margin-bottom:0.4rem">Welcome back!</h1>
+        <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem">Sign in to your FoodHub account</p>
+
+        <div class="social-auth">
+          <button class="social-auth-btn" onclick="handleGoogleSignIn('login')">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            Continue with Google
+          </button>
+          <button class="social-auth-btn" onclick="showToast('Facebook login coming soon!')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Continue with Facebook
+          </button>
+        </div>
+
+        <div class="auth-divider">or sign in with email</div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email">
+          <div class="form-error">Please enter a valid email</div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="password-wrap">
+            <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password">
+            <button class="password-toggle" onclick="togglePwd('loginPassword', this)" type="button">Show</button>
+          </div>
+          <div class="form-error">Please enter your password</div>
+        </div>
+        <div class="form-actions-row">
+          <label class="form-check">
+            <input type="checkbox" id="rememberMe"> Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="handleLogin()" style="font-size:1rem;padding:0.95rem">Sign In →</button>
+
+        <div class="auth-footer">
+          Don't have an account? <a href="#" onclick="switchTab('register')">Create one free</a>
+        </div>
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div class="auth-panel" id="registerPanel">
+        <h1 style="font-size:2rem;margin-bottom:0.4rem">Join FoodHub</h1>
+        <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem">Create your free account today</p>
+
+        <div class="social-auth">
+          <button class="social-auth-btn" onclick="handleGoogleSignIn('register')">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            Sign up with Google
+          </button>
+          <button class="social-auth-btn" onclick="showToast('Facebook signup coming soon!')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Sign up with Facebook
+          </button>
+        </div>
+
+        <div class="auth-divider">or sign up with email</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="regFirst" placeholder="Ahmed">
+            <div class="form-error">Required</div>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="regLast" placeholder="Hassan">
+            <div class="form-error">Required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="regEmail" placeholder="your@email.com">
+          <div class="form-error">Please enter a valid email</div>
+        </div>
+        <div class="form-group">
+          <label>Password *</label>
+          <div class="password-wrap">
+            <input type="password" id="regPassword" placeholder="Min. 8 characters">
+            <button class="password-toggle" onclick="togglePwd('regPassword', this)" type="button">Show</button>
+          </div>
+          <div class="form-error">Password must be at least 8 characters</div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number (optional)</label>
+          <input type="tel" id="regPhone" placeholder="+1 555 000 0000">
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <label class="form-check" style="align-items:flex-start;gap:0.75rem">
+            <input type="checkbox" id="regTerms" style="margin-top:3px">
+            <span style="font-size:0.85rem">I agree to FoodHub's <a href="terms.html" style="color:var(--brand)">Terms of Service</a> and <a href="privacy.html" style="color:var(--brand)">Privacy Policy</a></span>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="handleRegister()" style="font-size:1rem;padding:0.95rem">Create Account →</button>
+
+        <div class="auth-footer">
+          Already have an account? <a href="#" onclick="switchTab('login')">Sign in</a>
+        </div>
+      </div>
+
+      <!-- SUCCESS PANEL -->
+      <div class="auth-panel" id="successPanel" style="text-align:center;padding:3rem 1rem">
+        <div style="width:78px;height:78px;border-radius:50%;background:rgba(30,138,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-size:2.5rem">✅</div>
+        <h2 id="successTitle" style="margin-bottom:0.75rem">Welcome back!</h2>
+        <p style="color:var(--text-muted);margin-bottom:2.5rem;font-size:0.95rem;line-height:1.6" id="successMsg">You're now signed in. Ready to order?</p>
+        <a href="menu.html" class="btn btn-primary btn-full" style="font-size:1rem;padding:0.95rem">Browse Menu →</a>
+        <a href="index.html" class="btn btn-ghost btn-full" style="margin-top:0.75rem">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.auth-tab').forEach((t, i) => {
+    t.classList.toggle('active', (tab === 'login' && i === 0) || (tab === 'register' && i === 1));
+  });
+  document.getElementById('loginPanel').classList.toggle('active', tab === 'login');
+  document.getElementById('registerPanel').classList.toggle('active', tab === 'register');
+  document.getElementById('successPanel').classList.remove('active');
+}
+
+function togglePwd(id, btn) {
+  const inp = document.getElementById(id);
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = 'Hide'; }
+  else { inp.type = 'password'; btn.textContent = 'Show'; }
+}
+
+function showSuccess(title, msg) {
+  document.getElementById('loginPanel').classList.remove('active');
+  document.getElementById('registerPanel').classList.remove('active');
+  document.getElementById('successPanel').classList.add('active');
+  document.getElementById('successTitle').textContent = title;
+  document.getElementById('successMsg').textContent = msg;
+}
+
+function handleLogin() {
+  const email = document.getElementById('loginEmail');
+  const pwd = document.getElementById('loginPassword');
+  let valid = true;
+
+  email.closest('.form-group').classList.remove('error');
+  pwd.closest('.form-group').classList.remove('error');
+
+  if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    email.closest('.form-group').classList.add('error'); valid = false;
+  }
+  if (!pwd.value) {
+    pwd.closest('.form-group').classList.add('error'); valid = false;
+  }
+  if (!valid) return;
+
+  // Check DB first, then allow any login (demo mode)
+  const user = DB.findUser(email.value) || {
+    firstName: email.value.split('@')[0],
+    lastName: '',
+    email: email.value,
+    provider: 'email'
+  };
+  setCurrentUser(user);
+  showSuccess('Welcome back!', `You're signed in as ${user.firstName}. Let's find something delicious!`);
+}
+
+function handleRegister() {
+  const first = document.getElementById('regFirst');
+  const last = document.getElementById('regLast');
+  const email = document.getElementById('regEmail');
+  const pwd = document.getElementById('regPassword');
+  const terms = document.getElementById('regTerms');
+  let valid = true;
+
+  [first, last, email, pwd].forEach(el => el.closest('.form-group').classList.remove('error'));
+
+  if (!first.value.trim()) { first.closest('.form-group').classList.add('error'); valid = false; }
+  if (!last.value.trim()) { last.closest('.form-group').classList.add('error'); valid = false; }
+  if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    email.closest('.form-group').classList.add('error'); valid = false;
+  }
+  if (pwd.value.length < 8) { pwd.closest('.form-group').classList.add('error'); valid = false; }
+  if (!terms.checked) { showToast('Please accept the Terms of Service to continue'); valid = false; }
+  if (!valid) return;
+
+  if (DB.findUser(email.value)) {
+    showToast('This email is already registered. Please sign in.'); return;
+  }
+
+  const user = { firstName: first.value.trim(), lastName: last.value.trim(), email: email.value.trim(), phone: document.getElementById('regPhone').value, provider: 'email' };
+  DB.addUser(user);
+  setCurrentUser(user);
+  showSuccess(`Welcome, ${user.firstName}! 🎉`, 'Your account has been created successfully. Enjoy your first order!');
+}
+</script>
+</body>
+</html>

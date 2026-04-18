@@ -1,0 +1,360 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .container { max-width: 860px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+  .tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab { padding: 8px 18px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 13px; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all 0.15s; }
+  .tab.active { background: var(--color-background-secondary); color: var(--color-text-primary); font-weight: 500; border-color: var(--color-border-primary); }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 12px; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); float: right; transition: all 0.15s; }
+  .copy-btn:hover { background: var(--color-background-secondary); }
+  .copy-btn.copied { color: #0F6E56; border-color: #0F6E56; }
+
+  .section-label { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; margin-top: 1.5rem; }
+  .section-label:first-child { margin-top: 0; }
+
+  .code-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; color: var(--color-text-primary); white-space: pre-wrap; word-break: break-word; overflow-x: auto; }
+
+  .article-preview { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 2rem; background: var(--color-background-primary); direction: rtl; line-height: 1.9; }
+  .article-preview h1 { font-size: 22px; font-weight: 500; margin-bottom: 0.5rem; color: var(--color-text-primary); }
+  .article-preview h2 { font-size: 18px; font-weight: 500; margin: 1.5rem 0 0.6rem; color: var(--color-text-primary); border-right: 3px solid #1D9E75; padding-right: 10px; }
+  .article-preview h3 { font-size: 16px; font-weight: 500; margin: 1.2rem 0 0.5rem; color: var(--color-text-secondary); }
+  .article-preview p { font-size: 15px; color: var(--color-text-primary); margin-bottom: 0.8rem; }
+  .article-preview ul, .article-preview ol { padding-right: 1.5rem; margin-bottom: 0.8rem; }
+  .article-preview li { font-size: 15px; color: var(--color-text-primary); margin-bottom: 4px; }
+  .article-preview strong { font-weight: 500; }
+  .article-preview .meta { font-size: 13px; color: var(--color-text-tertiary); margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .article-preview .intro-box { background: var(--color-background-secondary); border-right: 3px solid #1D9E75; padding: 1rem 1.2rem; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; margin-bottom: 1.2rem; font-size: 15px; }
+  .article-preview .faq-item { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.8rem 1rem; margin-bottom: 8px; }
+  .article-preview .faq-q { font-weight: 500; font-size: 14px; margin-bottom: 4px; }
+  .article-preview .faq-a { font-size: 14px; color: var(--color-text-secondary); }
+
+  .seo-checker { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .seo-item { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.8rem 1rem; }
+  .seo-item .icon { font-size: 14px; margin-bottom: 4px; }
+  .seo-item .seo-title { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
+  .seo-item .seo-val { font-size: 13px; color: #0F6E56; font-weight: 500; margin-top: 2px; }
+
+  .tip-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem 1.2rem; margin-bottom: 10px; font-size: 13px; color: var(--color-text-primary); }
+  .tip-box strong { color: #0F6E56; }
+  .clearfix::after { content: ""; display: table; clear: both; }
+</style>
+
+<div class="container">
+  <div style="margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">مقالة جاهزة للنشر — انسخ HTML أو تصفح المعاينة</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('preview')">معاينة المقالة</button>
+    <button class="tab" onclick="switchTab('html')">كود HTML للبلوجر</button>
+    <button class="tab" onclick="switchTab('meta')">بيانات SEO الوصفية</button>
+    <button class="tab" onclick="switchTab('tips')">نصائح النشر</button>
+  </div>
+
+  <!-- Preview Panel -->
+  <div id="panel-preview" class="panel active">
+    <div class="article-preview">
+      <h1>السيو (SEO): الدليل الشامل للمبتدئين والمحترفين لتصدر نتائج جوجل 2025</h1>
+      <div class="meta">بقلم: [اسمك] &nbsp;|&nbsp; آخر تحديث: 2025 &nbsp;|&nbsp; وقت القراءة: 12 دقيقة &nbsp;|&nbsp; التصنيف: التسويق الرقمي / السيو</div>
+
+      <div class="intro-box">
+        هل تساءلت يومًا كيف تظهر بعض المواقع دائمًا في المرتبة الأولى على جوجل؟ الجواب ببساطة هو <strong>السيو (SEO)</strong>. في هذا الدليل الشامل ستتعلم كل ما تحتاجه لتحسين ترتيب موقعك وجذب آلاف الزوار مجانًا.
+      </div>
+
+      <p><strong>محتويات المقال:</strong></p>
+      <ol>
+        <li>ما هو السيو وأهميته</li>
+        <li>أنواع السيو الثلاثة</li>
+        <li>البحث عن الكلمات المفتاحية</li>
+        <li>السيو الداخلي On-Page SEO</li>
+        <li>السيو الخارجي Off-Page SEO</li>
+        <li>السيو التقني Technical SEO</li>
+        <li>أدوات السيو المجانية</li>
+        <li>أسئلة شائعة</li>
+      </ol>
+
+      <h2>ما هو السيو وما أهميته؟</h2>
+      <p>السيو أو <strong>تحسين محركات البحث (Search Engine Optimization)</strong> هو مجموعة من التقنيات والاستراتيجيات التي تُستخدم لرفع ترتيب موقعك في نتائج البحث المجانية (الأورجانيك). كلما كان ترتيبك أعلى، زاد عدد الزوار القادمين إلى موقعك مجانًا.</p>
+      <p>وفقًا لأحدث الإحصاءات، تحصل المواقع المتصدرة للنتيجة الأولى في جوجل على ما يزيد عن <strong>27% من إجمالي النقرات</strong>، بينما لا تتجاوز نسبة الصفحة العاشرة 2.5%. هذا الفارق الضخم يجعل السيو ضرورة وليس رفاهية.</p>
+
+      <h3>لماذا يهمك السيو؟</h3>
+      <ul>
+        <li>جلب زيارات مجانية ومستدامة لموقعك</li>
+        <li>بناء الثقة والمصداقية مع الجمهور</li>
+        <li>تفوق المنافسين في نتائج البحث</li>
+        <li>زيادة المبيعات والعملاء المحتملين</li>
+      </ul>
+
+      <h2>أنواع السيو الثلاثة الأساسية</h2>
+      <p>ينقسم السيو إلى ثلاثة محاور رئيسية يجب إتقانها معًا لتحقيق نتائج حقيقية:</p>
+
+      <h3>1. السيو الداخلي (On-Page SEO)</h3>
+      <p>يشمل كل ما تفعله داخل صفحاتك من تحسين المحتوى، والعناوين، والكلمات المفتاحية، والصور، وبنية الروابط الداخلية.</p>
+
+      <h3>2. السيو الخارجي (Off-Page SEO)</h3>
+      <p>يتعلق ببناء الروابط الخلفية (Backlinks) من مواقع أخرى، والتواجد على منصات التواصل الاجتماعي، وبناء سمعة قوية للموقع خارجيًا.</p>
+
+      <h3>3. السيو التقني (Technical SEO)</h3>
+      <p>يتناول البنية التقنية للموقع كسرعة التحميل، والتوافق مع الجوال، وملف Sitemap، وملف robots.txt، والبيانات المنظمة (Schema Markup).</p>
+
+      <h2>البحث عن الكلمات المفتاحية: الخطوة الأهم</h2>
+      <p>قبل كتابة أي محتوى، عليك معرفة ما يبحث عنه جمهورك بالضبط. الكلمة المفتاحية الصحيحة هي الجسر الذي يربطك بالزائر المناسب.</p>
+
+      <h3>أنواع الكلمات المفتاحية</h3>
+      <ul>
+        <li><strong>كلمات قصيرة (Short-tail):</strong> مثل "سيو" — منافسة عالية جدًا</li>
+        <li><strong>كلمات طويلة (Long-tail):</strong> مثل "كيف أتعلم السيو مجانًا للمبتدئين" — منافسة أقل وتحويل أعلى</li>
+        <li><strong>كلمات المنافسين:</strong> تحليل ما يصنفه منافسوك وبناء محتوى أفضل منه</li>
+      </ul>
+
+      <h2>السيو الداخلي: تحسين صفحاتك من الداخل</h2>
+      <p>يبدأ السيو الداخلي من كتابة محتوى عالي الجودة، ثم ضمان ظهور الكلمة المفتاحية في الأماكن الصحيحة:</p>
+      <ul>
+        <li>العنوان الرئيسي H1 (مرة واحدة فقط)</li>
+        <li>عنوان الصفحة (Title Tag) — 50 إلى 60 حرف</li>
+        <li>الوصف التعريفي (Meta Description) — 150 إلى 160 حرف</li>
+        <li>العناوين الفرعية H2 وH3</li>
+        <li>أول 100 كلمة من المقال</li>
+        <li>نص الصور البديل (Alt Text)</li>
+        <li>رابط الصفحة (URL Slug)</li>
+      </ul>
+
+      <h2>السيو الخارجي: بناء السلطة والمصداقية</h2>
+      <p>كلما أشارت إليك مواقع موثوقة، زادت ثقة جوجل في موقعك. من أبرز طرق بناء الروابط:</p>
+      <ul>
+        <li>التدوين الضيف (Guest Posting) على مواقع ذات سلطة</li>
+        <li>إنشاء محتوى يستحق الإشارة إليه (Link-worthy Content)</li>
+        <li>الإدراج في أدلة المواقع المتخصصة</li>
+        <li>التفاعل مع المجتمعات الرقمية في مجالك</li>
+      </ul>
+
+      <h2>السيو التقني: الأساس الذي يُبنى عليه كل شيء</h2>
+      <p>موقع سريع وآمن ومتوافق مع الهاتف هو شرط أساسي للتصدر. تأكد من:</p>
+      <ul>
+        <li>سرعة تحميل الصفحة أقل من 3 ثوانٍ</li>
+        <li>تصميم متجاوب مع جميع الأجهزة</li>
+        <li>شهادة SSL (HTTPS)</li>
+        <li>رفع خريطة الموقع (Sitemap) على Google Search Console</li>
+        <li>إصلاح الروابط المعطلة (404 Errors)</li>
+      </ul>
+
+      <h2>أفضل أدوات السيو المجانية لعام 2025</h2>
+      <ul>
+        <li><strong>Google Search Console:</strong> مراقبة أداء موقعك في جوجل</li>
+        <li><strong>Google Analytics 4:</strong> تحليل سلوك الزوار</li>
+        <li><strong>Google Keyword Planner:</strong> اكتشاف الكلمات المفتاحية</li>
+        <li><strong>Ubersuggest (النسخة المجانية):</strong> تحليل المنافسين والكلمات</li>
+        <li><strong>Screaming Frog (50 صفحة مجانًا):</strong> فحص السيو التقني</li>
+        <li><strong>Yoast SEO / Rank Math:</strong> إضافات ووردبريس لتحسين المحتوى</li>
+      </ul>
+
+      <h2>أسئلة شائعة حول السيو</h2>
+      <div class="faq-item">
+        <div class="faq-q">كم يستغرق ظهور نتائج السيو؟</div>
+        <div class="faq-a">عادةً بين 3 إلى 6 أشهر لرؤية نتائج ملموسة، لكن الاستمرارية هي المفتاح.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">هل يمكنني تعلم السيو بنفسي؟</div>
+        <div class="faq-a">نعم تمامًا، هناك موارد مجانية رائعة كـ Google Search Central ومدونة Moz وقناة Neil Patel.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">هل السيو مجاني؟</div>
+        <div class="faq-a">السيو العضوي مجاني من حيث النقرات، لكنه يتطلب وقتًا وجهدًا أو ميزانية لاستئجار متخصص.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ما الفرق بين السيو والإعلانات المدفوعة؟</div>
+        <div class="faq-a">الإعلانات تعطي نتائج فورية لكنها تنتهي بانتهاء الميزانية، أما السيو فيبني أصلًا مستدامًا طويل الأمد.</div>
+      </div>
+
+      <h2>خلاصة: خطواتك الأولى في عالم السيو</h2>
+      <p>السيو رحلة وليست وجهة. ابدأ بالأساسيات: اختر كلماتك المفتاحية بعناية، اكتب محتوى حقيقيًا يفيد القارئ، حسّن بنيتك التقنية، وابنِ علاقات تجلب لك روابط قيّمة. الاستمرار والتحليل المستمر هما سر النجاح في هذا المجال.</p>
+      <p>شارك هذا المقال مع كل من يريد تعلم السيو، وإذا كان لديك سؤال اتركه في التعليقات!</p>
+    </div>
+  </div>
+
+  <!-- HTML Panel -->
+  <div id="panel-html" class="panel">
+    <div class="clearfix" style="margin-bottom: 8px;">
+      <span class="section-label" style="margin-top: 0; float: right;">كود HTML — الصقه مباشرة في محرر HTML في بلوجر</span>
+      <button class="copy-btn" id="btn-html" onclick="copyHTML()">نسخ الكود</button>
+    </div>
+    <div class="code-box" id="html-code" style="max-height: 480px; overflow-y: auto; direction: ltr;">&lt;!-- ===== مقالة السيو - جاهزة للنشر ===== --&gt;
+&lt;article itemscope itemtype="https://schema.org/Article"&gt;
+
+&lt;meta itemprop="headline" content="السيو: الدليل الشامل للمبتدئين والمحترفين لتصدر نتائج جوجل 2025"&gt;
+&lt;meta itemprop="datePublished" content="2025-01-01"&gt;
+&lt;meta itemprop="author" content="[اسمك]"&gt;
+
+&lt;!-- مربع المقدمة --&gt;
+&lt;div style="background:#f0faf5;border-right:4px solid #1D9E75;padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem;direction:rtl"&gt;
+هل تساءلت يومًا كيف تظهر بعض المواقع دائمًا في المرتبة الأولى على جوجل؟ الجواب هو &lt;strong&gt;السيو (SEO)&lt;/strong&gt;. في هذا الدليل الشامل ستتعلم كل ما تحتاجه لتحسين ترتيب موقعك وجذب آلاف الزوار مجانًا.
+&lt;/div&gt;
+
+&lt;h2&gt;ما هو السيو وما أهميته؟&lt;/h2&gt;
+&lt;p&gt;السيو أو &lt;strong&gt;تحسين محركات البحث (Search Engine Optimization)&lt;/strong&gt; هو مجموعة من التقنيات التي تُستخدم لرفع ترتيب موقعك في نتائج البحث المجانية. وفقًا لأحدث الإحصاءات، تحصل المواقع في المرتبة الأولى على أكثر من &lt;strong&gt;27% من إجمالي النقرات&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;أنواع السيو الثلاثة الأساسية&lt;/h2&gt;
+&lt;h3&gt;1. السيو الداخلي (On-Page SEO)&lt;/h3&gt;
+&lt;p&gt;يشمل تحسين المحتوى، والعناوين، والكلمات المفتاحية، والصور، وبنية الروابط الداخلية.&lt;/p&gt;
+&lt;h3&gt;2. السيو الخارجي (Off-Page SEO)&lt;/h3&gt;
+&lt;p&gt;يتعلق ببناء الروابط الخلفية (Backlinks) من مواقع أخرى وبناء سمعة قوية خارجيًا.&lt;/p&gt;
+&lt;h3&gt;3. السيو التقني (Technical SEO)&lt;/h3&gt;
+&lt;p&gt;يتناول سرعة التحميل، والتوافق مع الجوال، وملف Sitemap، والبيانات المنظمة.&lt;/p&gt;
+
+&lt;h2&gt;البحث عن الكلمات المفتاحية: الخطوة الأهم&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;كلمات قصيرة (Short-tail):&lt;/strong&gt; منافسة عالية جدًا&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;كلمات طويلة (Long-tail):&lt;/strong&gt; منافسة أقل وتحويل أعلى&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;كلمات المنافسين:&lt;/strong&gt; تحليل ما يصنفه منافسوك&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;السيو الداخلي: تحسين صفحاتك من الداخل&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;العنوان الرئيسي H1 (مرة واحدة فقط)&lt;/li&gt;
+  &lt;li&gt;عنوان الصفحة Title Tag بين 50-60 حرف&lt;/li&gt;
+  &lt;li&gt;الوصف التعريفي Meta Description بين 150-160 حرف&lt;/li&gt;
+  &lt;li&gt;أول 100 كلمة من المقال&lt;/li&gt;
+  &lt;li&gt;نص الصور البديل Alt Text&lt;/li&gt;
+  &lt;li&gt;رابط الصفحة URL Slug&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;السيو الخارجي: بناء السلطة والمصداقية&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;التدوين الضيف (Guest Posting) على مواقع ذات سلطة&lt;/li&gt;
+  &lt;li&gt;إنشاء محتوى يستحق الإشارة إليه&lt;/li&gt;
+  &lt;li&gt;الإدراج في أدلة المواقع المتخصصة&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;السيو التقني: الأساس الذي يُبنى عليه كل شيء&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;سرعة تحميل الصفحة أقل من 3 ثوانٍ&lt;/li&gt;
+  &lt;li&gt;تصميم متجاوب مع جميع الأجهزة&lt;/li&gt;
+  &lt;li&gt;شهادة SSL (HTTPS)&lt;/li&gt;
+  &lt;li&gt;رفع خريطة الموقع Sitemap&lt;/li&gt;
+  &lt;li&gt;إصلاح الروابط المعطلة (404 Errors)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;أفضل أدوات السيو المجانية لعام 2025&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Google Search Console:&lt;/strong&gt; مراقبة أداء موقعك&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Google Analytics 4:&lt;/strong&gt; تحليل سلوك الزوار&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Google Keyword Planner:&lt;/strong&gt; اكتشاف الكلمات المفتاحية&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ubersuggest:&lt;/strong&gt; تحليل المنافسين&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Screaming Frog:&lt;/strong&gt; فحص السيو التقني&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- FAQ Schema --&gt;
+&lt;div itemscope itemtype="https://schema.org/FAQPage"&gt;
+&lt;h2&gt;أسئلة شائعة حول السيو&lt;/h2&gt;
+
+&lt;div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"&gt;
+  &lt;h3 itemprop="name"&gt;كم يستغرق ظهور نتائج السيو؟&lt;/h3&gt;
+  &lt;div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"&gt;
+    &lt;p itemprop="text"&gt;عادةً بين 3 إلى 6 أشهر لرؤية نتائج ملموسة، لكن الاستمرارية هي المفتاح.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"&gt;
+  &lt;h3 itemprop="name"&gt;هل يمكنني تعلم السيو بنفسي؟&lt;/h3&gt;
+  &lt;div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"&gt;
+    &lt;p itemprop="text"&gt;نعم تمامًا، هناك موارد مجانية رائعة كـ Google Search Central ومدونة Moz.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"&gt;
+  &lt;h3 itemprop="name"&gt;ما الفرق بين السيو والإعلانات المدفوعة؟&lt;/h3&gt;
+  &lt;div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"&gt;
+    &lt;p itemprop="text"&gt;الإعلانات تعطي نتائج فورية لكنها تنتهي بانتهاء الميزانية، أما السيو فيبني أصلًا مستدامًا.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;خلاصة: خطواتك الأولى في عالم السيو&lt;/h2&gt;
+&lt;p&gt;السيو رحلة وليست وجهة. ابدأ بالأساسيات، اكتب محتوى حقيقيًا يفيد القارئ، حسّن بنيتك التقنية، وابنِ علاقات تجلب لك روابط قيّمة.&lt;/p&gt;
+
+&lt;/article&gt;</div>
+  </div>
+
+  <!-- Meta Panel -->
+  <div id="panel-meta" class="panel">
+    <div class="section-label">إعدادات SEO — أدخلها في إعدادات المقالة في بلوجر</div>
+
+    <div style="display: grid; gap: 12px; direction: rtl;">
+      <div>
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">عنوان الصفحة (Title Tag) — 57 حرف</div>
+        <div class="code-box">السيو: الدليل الشامل للمبتدئين لتصدر نتائج جوجل 2025</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">الوصف التعريفي (Meta Description) — 155 حرف</div>
+        <div class="code-box">تعلم السيو من الصفر: أنواعه الثلاثة، البحث عن الكلمات المفتاحية، أفضل الأدوات المجانية، ونصائح عملية لتصدر نتائج جوجل وزيادة زيارات موقعك مجانًا.</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">الكلمات المفتاحية المستهدفة</div>
+        <div class="code-box">سيو، SEO، تحسين محركات البحث، تعلم السيو، السيو للمبتدئين، أدوات السيو، السيو الداخلي، السيو التقني</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">رابط المقال (URL Slug) — استخدمه في بلوجر</div>
+        <div class="code-box" style="direction: ltr;">seo-guide-beginners-2025</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">الوسوم (Labels/Tags) في بلوجر</div>
+        <div class="code-box">سيو, تحسين محركات البحث, التسويق الرقمي, بناء الروابط, كلمات مفتاحية</div>
+      </div>
+    </div>
+
+    <div class="section-label">نتيجة السيو المتوقعة</div>
+    <div class="seo-checker">
+      <div class="seo-item"><div class="seo-title">طول المقال</div><div class="seo-val">+1500 كلمة</div></div>
+      <div class="seo-item"><div class="seo-title">عناوين فرعية H2</div><div class="seo-val">8 عناوين</div></div>
+      <div class="seo-item"><div class="seo-title">FAQ Schema</div><div class="seo-val">مُضمَّن</div></div>
+      <div class="seo-item"><div class="seo-title">Article Schema</div><div class="seo-val">مُضمَّن</div></div>
+      <div class="seo-item"><div class="seo-title">كثافة الكلمة المفتاحية</div><div class="seo-val">~1.5%</div></div>
+      <div class="seo-item"><div class="seo-title">وقت القراءة</div><div class="seo-val">~12 دقيقة</div></div>
+    </div>
+  </div>
+
+  <!-- Tips Panel -->
+  <div id="panel-tips" class="panel">
+    <div class="section-label">قبل النشر</div>
+    <div class="tip-box"><strong>صورة المقالة:</strong> أضف صورة رئيسية مع Alt Text يحتوي على "السيو SEO دليل شامل 2025" — الأبعاد المثالية 1200×628 بكسل.</div>
+    <div class="tip-box"><strong>الربط الداخلي:</strong> اربط هذه المقالة بمقالات أخرى ذات صلة على مدونتك لتحسين وقت البقاء وتوزيع السلطة.</div>
+    <div class="tip-box"><strong>تاريخ النشر:</strong> في بلوجر اضبط التاريخ على يوم تنشر فيه فعلًا، وتذكر تحديث "تاريخ آخر تعديل" عند التحديث.</div>
+
+    <div class="section-label">بعد النشر</div>
+    <div class="tip-box"><strong>Google Search Console:</strong> أضف رابط المقالة يدويًا في أداة "Fetch as Google" لتسريع الفهرسة.</div>
+    <div class="tip-box"><strong>مشاركة المقال:</strong> شاركه على تويتر/X وفيسبوك وليندكإن لجلب إشارات اجتماعية تدعم السيو.</div>
+    <div class="tip-box"><strong>تحديث المقال:</strong> راجع المقالة كل 6 أشهر وحدّث الأرقام والأدوات للحفاظ على تصنيفها وإبرازها كـ "محتوى محدّث".</div>
+
+    <div class="section-label">إعداد بلوجر لـ SEO</div>
+    <div class="tip-box"><strong>إعدادات &gt; تفضيلات البحث:</strong> فعّل خيار "وصف ما يصل إليه الباحث" وأضف الوصف التعريفي لكل مقالة يدويًا.</div>
+    <div class="tip-box"><strong>robots.txt:</strong> تأكد أن بلوجر يسمح بزحف جوجل — تحقق من الإعدادات &gt; تفضيلات البحث &gt; robots.txt.</div>
+    <div style="margin-top: 1rem; text-align: center;">
+      <button style="padding: 10px 20px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); cursor: pointer; font-size: 13px; background: var(--color-background-primary); color: var(--color-text-primary);" onclick="sendPrompt('أريد مقالة بلوجر أخرى حول موضوع [اكتب موضوعك]')">اطلب مقالة بموضوع مختلف ↗</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function copyHTML() {
+  const text = document.getElementById('html-code').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('btn-html');
+    btn.textContent = 'تم النسخ!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'نسخ الكود'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>

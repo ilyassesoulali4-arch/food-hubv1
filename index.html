@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodHub — Order from 500+ restaurants. Fresh food delivered in 30 minutes. Join 50,000+ happy customers.">
+  <meta name="keywords" content="food delivery, restaurant, order online, fast delivery">
+  <meta property="og:title" content="FoodHub — Fresh Food Delivered Fast">
+  <meta property="og:description" content="Order from 500+ top restaurants. Fresh food at your door in 30 minutes.">
+  <meta property="og:type" content="website">
+  <title>FoodHub — Fresh Food Delivered Fast</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+<script src="nav.js"></script>
+<script>injectNav('home');</script>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge fade-up fade-up-1">
+          <span class="hero-badge-dot"></span>
+          Open Now — Delivering in 30 min
+        </div>
+        <h1 class="fade-up fade-up-1">Your Favorite Food, <em>Delivered Fresh</em></h1>
+        <p class="hero-sub fade-up fade-up-2">Order from 500+ top restaurants. Fresh, hot and at your door — every single time. Join 50,000+ satisfied customers.</p>
+        <div class="hero-actions fade-up fade-up-2">
+          <a href="menu.html" class="btn btn-primary btn-lg">Browse Menu →</a>
+          <a href="about.html" class="btn btn-outline" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.3)">How It Works</a>
+        </div>
+        <div class="hero-trust fade-up fade-up-3">
+          <div class="hero-avatars">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="Happy customer">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="Happy customer">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face&q=80" alt="Happy customer">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face&q=80" alt="Happy customer">
+          </div>
+          <div class="hero-trust-text">
+            <div class="stars" style="margin-bottom:4px">
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+              <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            </div>
+            <strong>50,000+</strong> happy customers
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=700&q=80" alt="Delicious Food Platter">
+        <div class="hero-float-card card-1 fade-up fade-up-3">
+          <div class="hero-float-icon bg-brand">⚡</div>
+          <div>
+            <div class="hero-float-title">Fast Delivery</div>
+            <div class="hero-float-sub">Avg. 28 minutes</div>
+          </div>
+        </div>
+        <div class="hero-float-card card-2 fade-up fade-up-4">
+          <div class="hero-float-icon bg-gold">⭐</div>
+          <div>
+            <div class="hero-float-title">4.9 Rating</div>
+            <div class="hero-float-sub">12,400+ reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num" id="countCustomers">0<span>K+</span></div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="countRestaurants">0<span>+</span></div>
+        <div class="stat-label">Partner Restaurants</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Delivery Service</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">28<span>min</span></div>
+        <div class="stat-label">Average Delivery</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── POPULAR MENU ── -->
+<section class="section bg-cream" id="menu">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">🍽️ Our Menu</div>
+      <h2>Most Popular Dishes</h2>
+      <p>Handpicked favorites from our top restaurants — always fresh, always outstanding.</p>
+    </div>
+    <div class="cat-filter">
+      <button class="cat-btn active" onclick="filterMenu('all',this)">All</button>
+      <button class="cat-btn" onclick="filterMenu('chicken',this)">🍗 Chicken</button>
+      <button class="cat-btn" onclick="filterMenu('burger',this)">🍔 Burgers</button>
+      <button class="cat-btn" onclick="filterMenu('pizza',this)">🍕 Pizza</button>
+      <button class="cat-btn" onclick="filterMenu('dessert',this)">🍰 Desserts</button>
+    </div>
+    <div class="menu-grid" id="homeMenuGrid"></div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="menu.html" class="btn btn-outline">View Full Menu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">How It Works</div>
+      <h2>Order in 3 Simple Steps</h2>
+      <p>Getting your favorite food has never been this easy.</p>
+    </div>
+    <div class="grid-3" style="gap:2.5rem;position:relative">
+      <div style="position:absolute;top:3.5rem;left:25%;right:25%;height:2px;background:linear-gradient(90deg,var(--brand),var(--gold));opacity:0.3" class="desktop-only"></div>
+      <div class="card" style="padding:2.5rem;text-align:center">
+        <div style="width:72px;height:72px;border-radius:20px;background:rgba(212,66,15,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem">🔍</div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--brand);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;font-family:'Plus Jakarta Sans',sans-serif">Step 01</div>
+        <h3 style="margin-bottom:0.6rem">Browse & Choose</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Explore hundreds of dishes from 500+ restaurants. Filter by cuisine, price or dietary needs.</p>
+      </div>
+      <div class="card" style="padding:2.5rem;text-align:center">
+        <div style="width:72px;height:72px;border-radius:20px;background:rgba(201,152,42,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem">🛒</div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;font-family:'Plus Jakarta Sans',sans-serif">Step 02</div>
+        <h3 style="margin-bottom:0.6rem">Add & Order</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Add items to cart and checkout in seconds. Multiple payment methods accepted securely.</p>
+      </div>
+      <div class="card" style="padding:2.5rem;text-align:center">
+        <div style="width:72px;height:72px;border-radius:20px;background:rgba(30,138,74,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem">🚴</div>
+        <div style="font-size:0.72rem;font-weight:700;color:var(--success);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;font-family:'Plus Jakarta Sans',sans-serif">Step 03</div>
+        <h3 style="margin-bottom:0.6rem">Track & Enjoy</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Watch your order in real-time. Hot, fresh food delivered straight to your door in ~28 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Why FoodHub</div>
+      <h2>Why Thousands Choose Us</h2>
+      <p>We're not just a delivery service — we're your food partner.</p>
+    </div>
+    <div class="grid-3" style="gap:2rem">
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(212,66,15,0.08);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">Lightning Fast</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">30 minutes or it's free. Our riders use smart routing to get food to you hot and on time.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(201,152,42,0.1);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">Top Quality</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">We partner only with restaurants that pass our quality checks. Every dish meets our standards.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(30,138,74,0.08);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">100% Secure</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Bank-level encryption for all payments. Multiple methods supported. Your data stays private.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(212,66,15,0.06);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">Live Tracking</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Follow your order in real-time. Know exactly when your rider is around the corner.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(201,152,42,0.08);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">Easy Reorder</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Loved your last order? Reorder with one tap. Save your favorites for instant checkout.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div class="feature-icon" style="background:rgba(30,138,74,0.06);width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.9-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 style="margin-bottom:0.6rem">24/7 Support</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">Our support team is always on standby. Chat, call or email — we'll solve any issue fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="section bg-white" id="testimonials">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">⭐ Reviews</div>
+      <h2>What Our Customers Say</h2>
+      <p>Real people, honest reviews — join thousands of happy food lovers.</p>
+    </div>
+    <div class="grid-3" style="gap:1.5rem">
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <div class="testi-header">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&q=80" alt="Omar Al-Rashid">
+          <div>
+            <div class="testi-name">Omar Al-Rashid</div>
+            <div class="testi-role">Business Owner</div>
+          </div>
+          <div class="stars" style="margin-left:auto">
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+          </div>
+        </div>
+        <p class="testi-text">I use FoodHub every week for office lunches. The variety is incredible and food always arrives on time. My team absolutely loves the quality — it feels like a restaurant experience at your desk.</p>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <div class="testi-header">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&q=80" alt="Hassan Mohammed">
+          <div>
+            <div class="testi-name">Hassan Mohammed</div>
+            <div class="testi-role">Family Man</div>
+          </div>
+          <div class="stars" style="margin-left:auto">
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+          </div>
+        </div>
+        <p class="testi-text">Perfect for family dinners. Quality is always consistent, delivery is never late. The kids love the variety and I love the easy reorder button. FoodHub is simply part of our routine now!</p>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <div class="testi-header">
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face&q=80" alt="Youssef Karim">
+          <div>
+            <div class="testi-name">Youssef Karim</div>
+            <div class="testi-role">University Student</div>
+          </div>
+          <div class="stars" style="margin-left:auto">
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 1l2.39 7.26H20l-6.19 4.5 2.39 7.24L10 15.51l-6.2 4.49 2.39-7.24L0 8.26h7.61z"/></svg>
+          </div>
+        </div>
+        <p class="testi-text">Unbeatable deals on first orders. Perfect for student budgets. Great variety for late-night study sessions and the Pro discount saves me money every month. Highly recommend!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="section bg-cream" id="pricing">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Plans</div>
+      <h2>Simple, Transparent Pricing</h2>
+      <p>Choose the plan that works for you. Upgrade or cancel anytime.</p>
+    </div>
+    <div class="pricing-grid" style="max-width:900px;margin:0 auto">
+      <div class="pricing-card">
+        <div class="pricing-name">Basic</div>
+        <div class="pricing-price">Free</div>
+        <p class="pricing-desc">Get started with FoodHub</p>
+        <ul class="pricing-features">
+          <li><span class="check-icon">✓</span> Order from any restaurant</li>
+          <li><span class="check-icon">✓</span> Standard delivery fee</li>
+          <li><span class="check-icon">✓</span> Email support</li>
+          <li><span class="check-icon">✓</span> Live order tracking</li>
+        </ul>
+        <a href="login.html" class="btn btn-outline btn-full">Get Started Free</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-name">Pro Member</div>
+        <div class="pricing-price">$9.99 <small>/mo</small></div>
+        <p class="pricing-desc">Best for regular orders</p>
+        <ul class="pricing-features">
+          <li><span class="check-icon">✓</span> All Basic features</li>
+          <li><span class="check-icon">✓</span> 20% off all orders</li>
+          <li><span class="check-icon">✓</span> Free delivery on $15+</li>
+          <li><span class="check-icon">✓</span> Priority support</li>
+          <li><span class="check-icon">✓</span> Exclusive member deals</li>
+        </ul>
+        <a href="login.html" class="btn btn-primary btn-full">Upgrade to Pro</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Premium</div>
+        <div class="pricing-price">$19.99 <small>/mo</small></div>
+        <p class="pricing-desc">Maximum savings &amp; perks</p>
+        <ul class="pricing-features">
+          <li><span class="check-icon">✓</span> All Pro features</li>
+          <li><span class="check-icon">✓</span> 30% off all orders</li>
+          <li><span class="check-icon">✓</span> Unlimited free delivery</li>
+          <li><span class="check-icon">✓</span> 24/7 VIP support</li>
+          <li><span class="check-icon">✓</span> Birthday rewards + cashback</li>
+        </ul>
+        <a href="login.html" class="btn btn-dark btn-full">Go Premium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROMO BANNER ── -->
+<section class="section-sm" style="background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+    <div>
+      <h3 style="color:white;font-size:1.7rem;margin-bottom:0.4rem">First Order? Get 20% Off!</h3>
+      <p style="color:rgba(255,255,255,0.75);font-size:0.95rem">Use code <strong style="color:white;background:rgba(255,255,255,0.15);padding:0.2rem 0.6rem;border-radius:6px">WELCOME20</strong> at checkout</p>
+    </div>
+    <a href="menu.html" class="btn btn-white btn-lg">Order Now →</a>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section-sm bg-dark">
+  <div class="container" style="text-align:center">
+    <h2 style="color:white;margin-bottom:1rem">Ready to Order?</h2>
+    <p style="color:rgba(255,255,255,0.55);margin-bottom:2rem;font-size:1.05rem">Join 50,000+ happy customers. Fresh food is just a click away.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="menu.html" class="btn btn-primary">Browse Menu →</a>
+      <a href="login.html" class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.3)">Create Free Account</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Food<span>Hub</span></h4>
+        <p>Your ultimate food delivery partner. Fresh food, lightning-fast delivery, unbeatable prices — delivered to your door every time.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter/X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Browse Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Partner With Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 FoodHub. All rights reserved.</p>
+      <p>Made with ❤️ for food lovers everywhere.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="menu-data.js"></script>
+<script>
+// Animate stats counter
+function animateCounter(el, target, suffix, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.innerHTML = Math.floor(start) + '<span>' + suffix + '</span>';
+  }, 16);
+}
+
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById('homeMenuGrid');
+  const items = (cat === 'all') ? menuItems : menuItems.filter(i => i.cat === cat);
+  grid.innerHTML = items.slice(0, 8).map(renderCard).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('homeMenuGrid');
+  if (grid) grid.innerHTML = menuItems.slice(0, 8).map(renderCard).join('');
+  // Animate counters
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(document.getElementById('countCustomers'), 50, 'K+', 1500);
+        animateCounter(document.getElementById('countRestaurants'), 500, '+', 1500);
+        obs.disconnect();
+      }
+    });
+  });
+  const statsEl = document.querySelector('.stats-bar');
+  if (statsEl) obs.observe(statsEl);
+});
+</script>
+</body>
+</html>

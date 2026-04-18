@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — FoodHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+<script src="nav.js"></script>
+<script>injectNav('faq');</script>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">/</span>
+      <span style="color:rgba(255,255,255,0.8)">FAQ</span>
+    </div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about FoodHub</p>
+  </div>
+</div>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div style="max-width:820px;margin:0 auto">
+
+      <!-- Search FAQ -->
+      <div style="margin-bottom:3rem;text-align:center">
+        <div style="position:relative;max-width:480px;margin:0 auto">
+          <input type="text" id="faqSearch" placeholder="Search questions..." oninput="searchFaq(this.value)" style="width:100%;padding:0.9rem 1rem 0.9rem 3rem;border:1.5px solid var(--border);border-radius:50px;font-family:inherit;font-size:0.95rem;outline:none;transition:var(--trans);box-shadow:var(--shadow)">
+          <svg style="position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);opacity:0.4" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+      </div>
+
+      <!-- Ordering -->
+      <div style="margin-bottom:3rem">
+        <h2 style="font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--brand);display:inline-block">🛒 Ordering</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I place an order?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Browse our menu, add items to your cart, and click "Place Order". You can checkout as a guest or sign in for a faster experience with saved addresses and order history.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What is the minimum order value?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">There is no minimum order value. However, orders under $20 will incur a delivery fee of $3.99. Orders of $20 or more receive free delivery automatically — no coupon needed.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Can I modify or cancel my order?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">You can modify or cancel your order within 5 minutes of placing it. After that, the restaurant has already started preparing your food. Contact our support team immediately at support@foodhub.com if you need help.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What payment methods do you accept?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We accept all major credit/debit cards (Visa, Mastercard, Amex), PayPal, Apple Pay, Google Pay, and cash on delivery (in select areas). All online payments are secured with SSL encryption.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I use a promo code?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Enter your promo code in the "Promo Code" field at checkout. The discount will be applied automatically. Promo codes cannot be combined with other offers. Your first-order code is <strong>WELCOME20</strong> for 20% off.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery -->
+      <div style="margin-bottom:3rem">
+        <h2 style="font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--brand);display:inline-block">🚴 Delivery</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How long does delivery take?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Our average delivery time is 28 minutes. We guarantee delivery within 30 minutes or your next order's delivery fee is free. Times may vary during peak hours or bad weather.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I track my order?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">After placing your order, you'll receive a confirmation email with a tracking link. You can also track your order in real-time directly from the order confirmation page. You'll receive SMS updates at key stages.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What areas do you deliver to?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We currently deliver across New York City (all 5 boroughs), with expansion to New Jersey and Connecticut planned for Q1 2026. Enter your address at checkout to confirm delivery availability in your area.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Is there a delivery fee?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Standard delivery is $3.99 for orders under $20. Orders over $20 get free delivery. Pro members get free delivery on all orders over $15, and Premium members enjoy unlimited free delivery on every order.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account -->
+      <div style="margin-bottom:3rem">
+        <h2 style="font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--brand);display:inline-block">👤 Account & Membership</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Do I need an account to order?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">No account is required for guest checkout. However, creating a free account lets you track order history, save favorite addresses, reorder quickly, and access exclusive member discounts.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What are the benefits of Pro and Premium plans?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Pro members ($9.99/mo) get 20% off all orders, free delivery on $15+, and priority support. Premium members ($19.99/mo) enjoy 30% off, unlimited free delivery, VIP 24/7 support, birthday rewards and cashback on every order.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Can I sign in with Google?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes! You can sign in or register using your Google account for a faster, more secure experience. Click "Continue with Google" on the Sign In page. Your Google profile information is never shared with third parties.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I delete my account?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">You can request account deletion by emailing privacy@foodhub.com. We'll process your request within 30 days in accordance with our Privacy Policy and applicable data protection laws.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Refunds -->
+      <div style="margin-bottom:3rem">
+        <h2 style="font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--brand);display:inline-block">💰 Refunds & Issues</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What if my order arrives wrong or damaged?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We're sorry! Take a photo and contact us within 2 hours of delivery at support@foodhub.com or via live chat. We'll investigate immediately and offer a full refund, replacement, or credit — whichever you prefer.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How long do refunds take?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Approved refunds are processed within 24 hours to your original payment method. Bank processing may take an additional 3–5 business days depending on your bank. FoodHub credits are instant.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              My food arrived late. What happens?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">If your order exceeds our 30-minute guarantee, your next order's delivery fee is automatically waived. If it's significantly late (over 45 minutes), contact support and we'll apply a discount credit to your account immediately.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="background:var(--dark);border-radius:var(--radius);padding:2.5rem;text-align:center">
+        <h3 style="color:white;margin-bottom:0.75rem">Still have questions?</h3>
+        <p style="color:rgba(255,255,255,0.55);margin-bottom:1.75rem;font-size:0.95rem">Our support team is available 7 days a week. We're happy to help!</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-primary">Contact Us →</a>
+          <a href="mailto:support@foodhub.com" class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.3)">Email Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h4>Food<span>Hub</span></h4><p>Your ultimate food delivery partner.</p></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 FoodHub. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function searchFaq(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

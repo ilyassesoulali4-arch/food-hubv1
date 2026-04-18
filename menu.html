@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — FoodHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+</head>
+<body>
+<script src="nav.js"></script>
+<script>injectNav('menu');</script>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">/</span>
+      <span style="color:rgba(255,255,255,0.8)">Menu</span>
+    </div>
+    <h1>Our Full Menu</h1>
+    <p>Fresh ingredients, bold flavors — something for everyone</p>
+  </div>
+</div>
+
+<section class="section bg-cream" id="menu">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
+      <div class="cat-filter" style="margin-bottom:0">
+        <button class="cat-btn active" onclick="filterMenu('all',this)">All Items</button>
+        <button class="cat-btn" onclick="filterMenu('chicken',this)">🍗 Chicken</button>
+        <button class="cat-btn" onclick="filterMenu('burger',this)">🍔 Burgers</button>
+        <button class="cat-btn" onclick="filterMenu('pizza',this)">🍕 Pizza</button>
+        <button class="cat-btn" onclick="filterMenu('dessert',this)">🍰 Desserts</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.86rem;color:var(--text-muted)">
+        <span id="itemCount">16 items</span>
+        <span>•</span>
+        <span>🚚 Free delivery on orders $20+</span>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div style="margin-bottom:2rem">
+      <div style="position:relative;max-width:360px">
+        <input type="text" id="menuSearch" placeholder="Search dishes..." oninput="searchMenu(this.value)" style="width:100%;padding:0.75rem 1rem 0.75rem 2.75rem;border:1.5px solid var(--border);border-radius:50px;font-family:inherit;font-size:0.9rem;outline:none;transition:var(--trans)">
+        <svg style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;opacity:0.4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+    <div id="noResults" style="display:none;text-align:center;padding:4rem;color:var(--text-muted)">
+      <div style="font-size:3rem;margin-bottom:1rem">🔍</div>
+      <p>No dishes found. Try a different search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Promo Banner -->
+<section class="section-sm" style="background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+    <div>
+      <h3 style="color:white;font-size:1.5rem;margin-bottom:0.4rem">First Order? Get 20% Off!</h3>
+      <p style="color:rgba(255,255,255,0.75);font-size:0.95rem">Use code <strong style="color:white;background:rgba(255,255,255,0.15);padding:0.2rem 0.5rem;border-radius:4px">WELCOME20</strong> at checkout</p>
+    </div>
+    <a href="login.html" class="btn btn-white">Claim Offer →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h4>Food<span>Hub</span></h4><p>Your ultimate food delivery partner.</p></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="faq.html">FAQ</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 FoodHub. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="menu-data.js"></script>
+<script>
+let currentCat = 'all';
+
+function filterMenu(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('menuSearch').value = '';
+  renderItems(cat === 'all' ? menuItems : menuItems.filter(i => i.cat === cat));
+}
+
+function searchMenu(query) {
+  const base = currentCat === 'all' ? menuItems : menuItems.filter(i => i.cat === currentCat);
+  const results = query.trim() ? base.filter(i => i.name.toLowerCase().includes(query.toLowerCase()) || i.desc.toLowerCase().includes(query.toLowerCase())) : base;
+  renderItems(results);
+}
+
+function renderItems(items) {
+  const grid = document.getElementById('menuGrid');
+  const none = document.getElementById('noResults');
+  document.getElementById('itemCount').textContent = items.length + ' items';
+  if (!items.length) { grid.innerHTML = ''; none.style.display = 'block'; }
+  else { none.style.display = 'none'; grid.innerHTML = items.map(renderCard).join(''); }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('menuGrid').innerHTML = menuItems.map(renderCard).join('');
+});
+</script>
+</body>
+</html>
