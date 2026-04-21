@@ -30,8 +30,13 @@ const DB = {
 };
 
 // ── SESSION ──
+// Checks sessionStorage first, then falls back to persistent localStorage
 function getCurrentUser() {
-  try { return JSON.parse(sessionStorage.getItem(USER_KEY)); } catch { return null; }
+  try {
+    return JSON.parse(sessionStorage.getItem(USER_KEY))
+        || JSON.parse(localStorage.getItem('fh_persist_user'))
+        || null;
+  } catch { return null; }
 }
 function setCurrentUser(user) {
   sessionStorage.setItem(USER_KEY, JSON.stringify(user));
@@ -39,6 +44,7 @@ function setCurrentUser(user) {
 }
 function logout() {
   sessionStorage.removeItem(USER_KEY);
+  localStorage.removeItem('fh_persist_user');
   updateNavUser();
   showToast('Signed out successfully');
 }
@@ -47,12 +53,19 @@ function updateNavUser() {
   const cta = document.querySelector('.nav-cta');
   if (!cta) return;
   if (user) {
-    cta.textContent = user.firstName || 'Account';
+    const name = user.firstName || user.email?.split('@')[0] || 'Account';
+    if (user.avatar) {
+      cta.innerHTML = `<img src="${user.avatar}" style="width:24px;height:24px;border-radius:50%;object-fit:cover;margin-right:4px;vertical-align:middle" onerror="this.style.display='none'">${name}`;
+    } else {
+      cta.textContent = name;
+    }
     cta.href = '#';
+    cta.title = `Signed in as ${user.email} — click to sign out`;
     cta.onclick = (e) => { e.preventDefault(); logout(); };
   } else {
-    cta.textContent = 'Sign In';
+    cta.innerHTML = 'Sign In';
     cta.href = 'login.html';
+    cta.title = '';
     cta.onclick = null;
   }
 }
@@ -214,33 +227,10 @@ function placeOrder() {
 }
 
 // ── GOOGLE SIGN IN ──
+// Handled entirely in login.html via Google Identity Services (GIS).
+// This stub prevents errors if called from anywhere else.
 function handleGoogleSignIn(type) {
-  // Simulate Google OAuth flow
-  showToast('⏳ Connecting to Google...');
-  setTimeout(() => {
-    const fakeUser = {
-      firstName: 'Guest',
-      lastName: 'User',
-      email: 'guest.user@gmail.com',
-      avatar: 'https://ui-avatars.com/api/?name=Guest+User&background=E8401C&color=fff',
-      provider: 'google'
-    };
-    setCurrentUser(fakeUser);
-    showToast('✅ Signed in with Google!');
-    setTimeout(() => {
-      if (type === 'register') {
-        document.getElementById('registerPanel')?.classList.remove('active');
-      } else {
-        document.getElementById('loginPanel')?.classList.remove('active');
-      }
-      const sp = document.getElementById('successPanel');
-      const st = document.getElementById('successTitle');
-      const sm = document.getElementById('successMsg');
-      if (sp) sp.classList.add('active');
-      if (st) st.textContent = 'Welcome!';
-      if (sm) sm.textContent = "You're signed in with Google. Let's find something delicious!";
-    }, 1000);
-  }, 1500);
+  window.location.href = 'login.html';
 }
 
 // ── INIT ──
